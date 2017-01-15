@@ -16,41 +16,95 @@
 				<div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
 					<small style="color:red; display:block; text-align:center;">Enter a valid name</small>
 				</div>
-				<span>
-					$prestine - {{contactForm.name.$pristine}} <br>
-					$dirty - {{contactForm.name.$dirty}} <br>
-					$untouched - {{contactForm.name.$untouched}} <br>
-					$touched - {{contactForm.name.$touched}} <br>
-					$invalid - {{contactForm.name.$invalid}} <br>
-					$valid - {{contactForm.name.$valid}}  <br>
-					$errors - {{contactForm.name.$error}}  <br>
-				</span>
+				<br>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>$pristine</th>
+							<th>$dirty</th>
+							<th>$untouched</th>
+							<th>$touched</th>
+							<th>$invalid</th>
+							<th>$valid</th>
+							<th>$errors</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{contactForm.name.$pristine}}</td>
+							<td>{{contactForm.name.$dirty}}</td>
+							<td>{{contactForm.name.$untouched}}</td>
+							<td>{{contactForm.name.$touched}}</td>
+							<td>{{contactForm.name.$invalid}}</td>
+							<td>{{contactForm.name.$valid}}</td>
+							<td>{{contactForm.name.$error}}</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 			<div class="form-group">
 				<label class="sr-only" for="email">Email address:</label>
 				<input type="email" class="form-control" name="email" placeholder="Email" ng-required="true" ng-model="contact.email" >
-				<span>
-					$prestine - {{contactForm.email.$pristine}} <br>
-					$dirty - {{contactForm.email.$dirty}} <br>
-					$untouched - {{contactForm.email.$untouched}} <br>
-					$touched - {{contactForm.email.$touched}} <br>
-					$invalid - {{contactForm.email.$invalid}} <br>
-					$valid - {{contactForm.email.$valid}} <br>
-					$errors - {{contactForm.email.$error}} <br>
-				</span>				
+				<div ng-show="contactForm.email.$touched && contactForm.email.$invalid">
+					<small style="color:red; display:block; text-align:center;">Enter a valid email</small>
+				</div>
+				<br>				
+				<table class="table">
+					<thead>
+						<tr>
+							<th>$pristine</th>
+							<th>$dirty</th>
+							<th>$untouched</th>
+							<th>$touched</th>
+							<th>$invalid</th>
+							<th>$valid</th>
+							<th>$errors</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{contactForm.email.$pristine}}</td>
+							<td>{{contactForm.email.$dirty}}</td>
+							<td>{{contactForm.email.$untouched}}</td>
+							<td>{{contactForm.email.$touched}}</td>
+							<td>{{contactForm.email.$invalid}}</td>
+							<td>{{contactForm.email.$valid}}</td>
+							<td>{{contactForm.email.$error}}</td>
+						</tr>
+					</tbody>
+				</table>			
 			</div>
 			<div class="form-group">
 				<label class="sr-only" for="message">Comments : </label>
 				<textarea class="form-control" placeholder="Your Message" name="message" ng-required="true" ng-model="contact.message"></textarea>
-				<span>
-					$prestine - {{contactForm.message.$pristine}} <br>
-					$dirty - {{contactForm.message.$dirty}} <br>
-					$untouched - {{contactForm.message.$untouched}} <br>
-					$touched - {{contactForm.message.$touched}} <br>
-					$invalid - {{contactForm.message.$invalid}} <br>
-					$valid - {{contactForm.message.$valid}} <br>
-					$errors - {{contactForm.message.$error}} <br>
-				</span>				
+				<div ng-show="contactForm.message.$touched && contactForm.message.$invalid">
+					<small style="color:red; display:block; text-align:center;">Enter comments</small>
+				</div>
+				<br>					
+				<table class="table">
+					<thead>
+						<tr>
+							<th>$pristine</th>
+							<th>$dirty</th>
+							<th>$untouched</th>
+							<th>$touched</th>
+							<th>$invalid</th>
+							<th>$valid</th>
+							<th>$errors</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{contactForm.message.$pristine}}</td>
+							<td>{{contactForm.message.$dirty}}</td>
+							<td>{{contactForm.message.$untouched}}</td>
+							<td>{{contactForm.message.$touched}}</td>
+							<td>{{contactForm.message.$invalid}}</td>
+							<td>{{contactForm.message.$valid}}</td>
+							<td>{{contactForm.message.$error}}</td>
+						</tr>
+					</tbody>
+				</table>			
 			</div>
 			<input type="submit" value="send"  class="btn btn-primary" ng-disabled="contactForm.$invalid">
 		</form>
