@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular Form Validation</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-controller="myController">
+<div class="container">
+	<h1>AngularJS Form Validation</h1>
+	<div class="content">	
+		<form name="contactForm" novalidate>
+			<div class="form-group">
+				<label class="sr-only" for="name">Name :</label>
+				<input type="text" class="form-control" name="name" placeholder="Name" ng-required="true" ng-model="contact.name">
+				<div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+					<small style="color:red; display:block; text-align:center;">Enter a valid name</small>
+				</div>
+				<span>
+					$prestine - {{contactForm.name.$pristine}} <br>
+					$dirty - {{contactForm.name.$dirty}} <br>
+					$untouched - {{contactForm.name.$untouched}} <br>
+					$touched - {{contactForm.name.$touched}} <br>
+					$invalid - {{contactForm.name.$invalid}} <br>
+					$valid - {{contactForm.name.$valid}}  <br>
+					$errors - {{contactForm.name.$error}}  <br>
+				</span>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="email">Email address:</label>
+				<input type="email" class="form-control" name="email" placeholder="Email" ng-required="true" ng-model="contact.email" >
+				<span>
+					$prestine - {{contactForm.email.$pristine}} <br>
+					$dirty - {{contactForm.email.$dirty}} <br>
+					$untouched - {{contactForm.email.$untouched}} <br>
+					$touched - {{contactForm.email.$touched}} <br>
+					$invalid - {{contactForm.email.$invalid}} <br>
+					$valid - {{contactForm.email.$valid}} <br>
+					$errors - {{contactForm.email.$error}} <br>
+				</span>				
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="message">Comments : </label>
+				<textarea class="form-control" placeholder="Your Message" name="message" ng-required="true" ng-model="contact.message"></textarea>
+				<span>
+					$prestine - {{contactForm.message.$pristine}} <br>
+					$dirty - {{contactForm.message.$dirty}} <br>
+					$untouched - {{contactForm.message.$untouched}} <br>
+					$touched - {{contactForm.message.$touched}} <br>
+					$invalid - {{contactForm.message.$invalid}} <br>
+					$valid - {{contactForm.message.$valid}} <br>
+					$errors - {{contactForm.message.$error}} <br>
+				</span>				
+			</div>
+			<input type="submit" value="send"  class="btn btn-primary" ng-disabled="contactForm.$invalid">
+		</form>
+	</div>	
+</div>	
+	<script src="https://code.angularjs.org/1.6.1/angular.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
